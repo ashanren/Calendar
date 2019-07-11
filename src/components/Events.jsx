@@ -1,21 +1,16 @@
 
-import React, { Component } from "react";
+import React from "react";
 
-export default class Events extends Component {
-
-  render () {
-    return (
-      <div>
-        <div className = "event" style = {{backgroundColor: 'grey'}} >
-          <span className = "event text">Hilo5SOMTHING GOING GOOD</span>
-        </div>
-        <div className = "event" style = {{backgroundColor: 'grey'}} >
-          <span className = "event text">Hilo2</span>
-        </div>
-        <div className = "event" style = {{backgroundColor: 'grey'}} >
-          <span className = "event text">Hilo3</span>
-        </div>
+function Events(props) {
+  const { title, color } = props;
+  return (
+    <div>
+      <div className = "event" style = {{backgroundColor: (color || 'grey')}} >
+        <span className = "event text">{title}</span>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+export default Events
+

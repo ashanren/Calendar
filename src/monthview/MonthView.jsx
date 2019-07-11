@@ -3,13 +3,13 @@ import React, { Component } from "react";
 import { addMonths, subMonths } from "date-fns";
 import Header from "./Header";
 import Days   from "./Days";
-import Cells   from "./Cells";
+import Cells  from "./Cells";
 
 export default class MonthView extends Component {
   constructor (state) {
     super(state);
     this.state = {
-      week_start    : 0,
+      week_start    : 1,
       date_format   : "MMMM yyyy",
       current_month : new Date(),
       selected_date : new Date(),
@@ -45,3 +45,4 @@ export default class MonthView extends Component {
     );
   }
 }
+

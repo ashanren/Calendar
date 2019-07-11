@@ -1,11 +1,17 @@
 
-import React, { Component } from "react";
+/*
+ * @file Days.jsxx
+ * @author Jarel Pellew
+ * @desc  Header with the week days for Month view
+ */
+
+import React from "react";
 import { addDays, startOfWeek, format } from "date-fns";
 
-export default class Days extends Component {
-  render_days = () => {
+function Days(props) {
+  const render_days = () => {
     const days        = [];
-    let start         = startOfWeek(this.props.current_month, {weekStartsOn: (this.props.week_start || 0)});
+    const start       = startOfWeek(props.current_month, {weekStartsOn: (props.week_start || 0)});
     const date_format = "EEEE";
 
     for (let i = 0; i < 7; ++i) {
@@ -13,11 +19,13 @@ export default class Days extends Component {
     }
     return days;
   }
-  render () {
-    return (
-      <div>
-        <div className = "days row">{this.render_days()}</div>
-      </div>
-    );
-  }
+
+  return (
+    <div>
+      <div className = "days row">{render_days()}</div>
+    </div>
+  );
 }
+
+export default Days;
+
